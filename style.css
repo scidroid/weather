@@ -12,6 +12,7 @@ html {
 header {
   display: flex;
   background-color: #42f;
+  height: 15vh;
 }
 
 header h1 {
@@ -27,6 +28,7 @@ header img {
 main {
   margin: 25px;
   text-align: center;
+  height: 70vh;
 }
 
 main h2 {
@@ -68,6 +70,7 @@ footer {
   font-size: 2rem;
   color: #fff;
   text-align: center;
+  height: 15vh;
 }
 
 footer a {

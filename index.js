@@ -9,28 +9,33 @@ const fetchData = () => {
     .then((response) => response.json())
     .then((responseJSON) => {
       const container = document.querySelector(".results");
+      if (document.getElementById('exists')) {
+        container.innerHTML = '';
+      }
       if (responseJSON.cod !== 200) {
         console.log("falló");
         const error = document.createElement("h4");
         error.textContent =
-          "Sorry, a wild error has apared, check the spell and try again.";
-        error.className = "error";
+          "Sorry the city doesn't, check the spell and try again, if persits try searching manhattan, if this return a error it's an API problem.";
+        error.id = "exists";
         container.append(error);
       } else {
         console.log("ta bien");
         const cityFromResponse = document.createElement("h4");
         cityFromResponse.textContent = `Found ${responseJSON.name}, ${responseJSON.sys.country}`;
-        cityFromResponse.className = "found";
-        //i need to fix this tomorrow.
-        //const image = document.createElement("img");
-        //image.src = `https://openweathermap.org/img/w/${responseJSON.weather[3]}.png`;
-        //const description = document.createElement("h5");
-        //console.log(responseJSON.weather[2]);
-        //description.textContent = responseJSON.weather[2];
+        cityFromResponse.id = "exists";
+        const image = document.createElement("img");
+        image.src = `https://openweathermap.org/img/wn/${responseJSON.weather[0].icon}@2x.png`;
+        image.id = 'image'
+        const description = document.createElement("p");
+        console.log(responseJSON.weather[0].description);
+        description.textContent = responseJSON.weather[0].description;
+        description.id = 'desc'
         const temp = document.createElement("p");
+        temp.id = 'temp'
         temp.textContent = `Estimate Temperature ${
           responseJSON.main.temp_min + responseJSON.main.temp_max / 2}C°`;
-        container.append(cityFromResponse, temp);
+        container.append(cityFromResponse, image, description, temp);
       }
     })
     .catch((err) => {
