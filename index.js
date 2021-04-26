@@ -4,7 +4,7 @@ const fetchData = () => {
       `https://api.openweathermap.org/data/2.5/weather?q=${document
         .getElementById("city")
         .value.split(" ")
-        .join("+")}&appid=6edcd89e1bf91ff50e8852c2a5b89a45`
+        .join("+")}&appid=6edcd89e1bf91ff50e8852c2a5b89a45&units=metric`
     )
     .then((response) => response.json())
     .then((responseJSON) => {
@@ -28,11 +28,8 @@ const fetchData = () => {
         //console.log(responseJSON.weather[2]);
         //description.textContent = responseJSON.weather[2];
         const temp = document.createElement("p");
-        temp.textContent = `Min. Temperature ${parseFloat(
-          responseJSON.main.temp_min / 33.8
-        ).toFixed(2)}C°, Max. Temperature ${parseFloat(
-          responseJSON.main.temp_max / 33.8
-        ).toFixed(2)}C°`;
+        temp.textContent = `Estimate Temperature ${
+          responseJSON.main.temp_min + responseJSON.main.temp_max / 2}C°`;
         container.append(cityFromResponse, temp);
       }
     })
@@ -50,3 +47,11 @@ const fetchData = () => {
 document.getElementById("button").addEventListener("click", fetchData);
 
 console.log("se ejecutó");
+
+let inputText = document.getElementById("city");
+inputText.addEventListener("keyup", function (event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.getElementById("button").click();
+  }
+});
