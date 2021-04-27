@@ -67,7 +67,7 @@ const fetchData = () => {
         temp.textContent = `Estimate Temperature ${
 
           //procees the minumun and maximun temperature for a average and parse for a max of 2 decimals
-          responseJSON.main.temp_min + responseJSON.main.temp_max / 2}C°`;
+          parseFloat(responseJSON.main.temp_min + responseJSON.main.temp_max / 2).toFixed(2)}C°`;
 
         //render the elements in the UI
         container.append(cityFromResponse, image, description, temp);
