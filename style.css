@@ -8,20 +8,23 @@
 html {
   font-size: 62.5%;
 }
-
-header {
+.navbar #nav {
   display: flex;
-  background-color: #42f;
+  color: darkblue;
   height: 15vh;
 }
-
-header h1 {
+p{a
+margin-top:20px;
+margin-bottom:10px;
+}
+nav h1 {
   align-self: center;
   font-size: 3rem;
-  color: white;
+  font-family: "Potta One";
+  color: darkblue;
 }
 
-header img {
+nav img {
   height: 80px;
 }
 
@@ -34,24 +37,18 @@ main {
 main h2 {
   font-size: 2.5rem;
   margin: 25px;
+  font-family: "Oswald";
 }
 
 main h3 {
   font-size: 2.2rem;
   margin-bottom: 10px;
+  font-family: "Oswald";
 }
 
 form input {
   border-radius: 4px;
   border: 1px #222 solid;
-  padding: 5px;
-  font-size: 1.5rem;
-}
-
-button {
-  background-color: #fff;
-  border-radius: 4px;
-  border: 2px #222 solid;
   padding: 5px;
   font-size: 1.5rem;
 }
@@ -65,14 +62,29 @@ h4 {
   font-size: 1.5rem;
 }
 
-footer {
-  background-color: #42f;
+.footer {
+  display: block;
+  margin-top: 10px;
+  background-color: darkblue;
   font-size: 2rem;
   color: #fff;
   text-align: center;
-  height: 15vh;
+  bottom: 0px;
+  padding-bottom: 40px;
 }
 
 footer a {
   color: #fff;
+}
+/*Alexander*/
+
+#h4 {
+  font-size: 3em;
+}
+
+#city {
+  font-size: 20px;
+}
+#button {
+  font-size: 15px;
 }
