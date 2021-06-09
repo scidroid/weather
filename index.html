@@ -18,67 +18,31 @@
 <meta property="twitter:title" content="Weather App">
 <meta property="twitter:description" content="Insert your city, View the weather. the simpliest way to query the weather for today!">
 <meta property="twitter:image" content="https://scidroid.github.io/weather/assets/logo.png">
-	<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" href="./style.css" />
 	<link rel="shortcut icon" href="assets/logo.png" />
-	<link rel="stylesheet" href="bootstrap.min.css"/>
-	<!--Fuentes-->
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Potta+One&display=swap" rel="stylesheet">
 </head>
 
 <body>
-<nav class="navbar"id="nav">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-     <img src="assets/logo.png" alt="logo" />
-     
-    </a>
-    <h1>Weather App</h1>
-  </div>
-</nav>
-
-	<header class="navbar">
-		
-      
+	<header>
+		<img src="assets/logo.png" alt="logo" />
+      <h1>Weather App</h1>
     </header>
     <main>
-      
-      <div class="form" id="form">
-    <div class="container p-4">
-            <div class="row">
-              <div class="col-md-4 mx-auto text.center">
-                <div class="card">
-                  <div class="card-body">
-                    <p id="weather-location" class="h3"></p>
-                     <h3  id="h4">Search the weather of your city.</h3>
-                     <h3  id="weather-string" class="">insert your city</h3>
-                    
-                  </div>
-                </div>
-                <div class="card">
-
-       <div class="card-body" id="card-body">
-         <form id="w-form" >
-           <div class="form-group" id="form-group">
-             <input type="text" name="city" id="city" class="form-control" placeholder="City" autofocus>
-               </div>
-               
-               <div class="form-group ">
-                 <button type="button" name="button" class="btn btn-dark btn-block" id="button">Search Weather</button>
-               </div>
-         </form>
-       </div>
-
-
-                </div>
-              </div>
-            </div>
-         </div>
-        
+      <h2>Search the weather of your city.</h2>
+      <h3>insert your city.</h3>
+      <div class="form">
+        <input type="text" name="city" id="city" placeholder="Ej: Bogotá" />
+        <button type="button" name="button" id="button">Search</button>
       </div>
       <div class="results"></div>
     </main>
-    <div class="footer"><p>By SciDroid under MIT license. Using Open weather map</p></footer>
+    <footer>
+      <p>By SciDroid under MIT license.
+        <a href="https://www.vecteezy.com/free-vector/sun-logo"
+          >Sun Logo Vectors by Vecteezy</a
+        >. Using <a href="https://openweathermap.org/">Open weather map</a>
+      </p>
+    </footer>
     <script src="index.js" charset="utf-8"></script>
   </body>
 </html>
